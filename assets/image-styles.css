@@ -1,0 +1,45 @@
+/* Image styles */
+.doc-image {
+  margin: 20px 0;
+  text-align: center;
+  max-width: 100%;
+}
+
+.doc-image img {
+  max-width: 100%;
+  width: auto;
+  max-height: 400px; /* Limit maximum height */
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e1e4e8;
+  object-fit: contain; /* Maintain aspect ratio */
+  /* Improve image quality when scaled down */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Special class for taller, portrait-oriented images */
+.doc-image.tall-image img {
+  max-height: 550px; /* Taller maximum height for portrait images */
+  min-height: 450px; /* Ensure a minimum height */
+}
+
+.image-caption {
+  font-size: 0.9em;
+  color: #757575;
+  margin-top: 8px;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .doc-image img {
+    max-height: 300px; /* Smaller on mobile devices */
+  }
+  
+  .doc-image.tall-image img {
+    max-height: 400px; /* Taller but still manageable on mobile */
+  }
+}
